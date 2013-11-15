@@ -3,11 +3,12 @@ require File.expand_path("../../config/environment", __FILE__)
 require 'rspec/rails'
 require 'rspec/autorun'
 require "email_spec"
+require_relative 'helpers'
+
+Dir[Rails.root.join("spec/support/**/*.rb")].each { |f| require f }
 
 # for CanCan
 require 'cancan/matchers'
-
-Dir[Rails.root.join("spec/support/**/*.rb")].each { |f| require f }
 
 DatabaseCleaner.strategy = :truncation
 
@@ -24,5 +25,9 @@ RSpec.configure do |config|
 
 #  config.include(EmailSpec::Helpers)
 #  config.include(EmailSpec::Matchers)
+  config.include Helpers
+  config.include Warden::Test::Helpers
   config.include Devise::TestHelpers, type: :controller
 end
+
+Warden.test_mode!

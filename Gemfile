@@ -1,10 +1,9 @@
 source 'https://rubygems.org'
 
+gem 'thin'
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.1'
-
-# Use sqlite3 as the database for Active Record
-gem 'sqlite3'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
@@ -32,32 +31,36 @@ group :doc do
   gem 'sdoc', require: false
 end
 
-# Use ActiveModel has_secure_password
-# gem 'bcrypt-ruby', '~> 3.1.2'
+gem 'gmaps4rails'
+gem 'underscore-rails'
 
-# Use unicorn as the app server
-# gem 'unicorn'
-
-# Use Capistrano for deployment
-# gem 'capistrano', group: :development
-
-# Use debugger
-# gem 'debugger', group: [:development, :test]
+gem 'geocoder'
 
 gem 'devise'
-gem 'haml'
+gem 'haml-rails'
 gem 'cancan'
-gem 'pry'
-gem 'pry-remote'
-gem 'pry-stack_explorer'
-gem 'pry-debugger'
+
+group :development do
+  # Use sqlite3 as the database for Active Record
+  gem 'sqlite3'
+
+  gem 'pry'
+  gem 'pry-remote'
+  gem 'pry-stack_explorer'
+  gem 'pry-debugger'
+
+  # This needs to be here, else rake spec will fail silently.
+  gem 'rspec-rails'
+end
 
 #testing with rspec
 
-group :development, :test do
-      gem 'capybara'
-      gem 'rspec-rails'
-      gem "factory_girl_rails"
-      gem 'database_cleaner'
-      gem "email_spec"
+group :test do
+  gem 'rspec-rails'
+  gem 'shoulda-matchers'
+
+  gem 'capybara'
+  gem "factory_girl_rails"
+  gem 'database_cleaner'
+  gem "email_spec"
 end

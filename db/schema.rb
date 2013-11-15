@@ -11,7 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131113054235) do
+ActiveRecord::Schema.define(version: 20131228215553) do
+
+  create_table "locations", force: true do |t|
+    t.float    "lat"
+    t.float    "long"
+    t.string   "name"
+    t.string   "address"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "tasks", force: true do |t|
     t.string   "title"
@@ -39,6 +48,7 @@ ActiveRecord::Schema.define(version: 20131113054235) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.boolean  "admin"
+    t.integer  "age"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
