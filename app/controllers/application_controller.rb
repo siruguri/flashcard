@@ -4,10 +4,19 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   before_action do
-  # Quite a few things to do before the app starts...
+    # Quite a few things to do before the app starts...
     I18n.locale = set_locale
     insert_default_param_filter
     create_navbar_data
+  end
+
+  rescue_from ActionController::RoutingError do |exception|
+    error_message = I18n.t(:message_404)
+    go_back_or_root(error_message)
+  end
+  rescue_from CanCan::AccessDenied do |exception|
+    error_message = I18n.t(:access_denied_message)
+    go_back_or_root(error_message)
   end
 
   private
@@ -18,7 +27,7 @@ class ApplicationController < ActionController::Base
   end
 
   def insert_default_param_filter
-  # 2. This helps Rails4 strong parameter setting
+    # 2. This helps Rails4 strong parameter setting
     resource = controller_name.singularize.to_sym
     method = "#{resource}_strong_params"
 
@@ -31,11 +40,11 @@ class ApplicationController < ActionController::Base
     end
   end
 
-  rescue_from CanCan::AccessDenied do |exception|
+  def go_back_or_root(message)
     if request.env.key? "HTTP_REFERER"
-      redirect_to :back, :alert => exception.message
+      redirect_to :back, :alert => message
     else
-      redirect_to root_url, :alert => exception.message
+      redirect_to root_url, :alert => message
     end
   end 
 

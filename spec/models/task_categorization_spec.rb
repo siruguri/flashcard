@@ -1,5 +1,5 @@
 require 'spec_helper'
 
-describe NavbarEntry do
+describe TaskCategorization do
   pending "add some examples to (or delete) #{__FILE__}"
 end
