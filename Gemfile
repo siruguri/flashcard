@@ -2,10 +2,11 @@ source 'https://rubygems.org'
 ruby '2.1.5'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.2.0.rc1'
+gem 'rails', '~>4.1'
 # Uncomment this for Heroku
 # gem 'rails_12factor'
 
+gem 'quiet_assets'
 gem 'thin'
 
 # Use SCSS for stylesheets
@@ -81,7 +82,7 @@ end
 group :test do
   gem 'shoulda-matchers'
   gem 'capybara'
-  gem 'selenium-webdriver'
+  gem 'capybara-webkit'
   gem "factory_girl_rails"
   gem 'database_cleaner'
   gem "email_spec"

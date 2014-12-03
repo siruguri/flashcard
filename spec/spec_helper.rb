@@ -1,18 +1,19 @@
 ENV["RAILS_ENV"] ||= 'test'
 require File.expand_path("../../config/environment", __FILE__)
 require 'rspec/rails'
-require 'rspec/autorun'
 require "email_spec"
 require_relative 'helpers'
-require 'capybara/rspec'
+require 'capybara'
 require 'capybara/rails'
+require 'capybara/rspec/matchers'
+require 'capybara/rspec/features'
 
 Dir[Rails.root.join("spec/support/**/*.rb")].each { |f| require f }
 
 # for CanCan
 require 'cancan/matchers'
 
-# Let's leave our seed data alone - note this limits the number of databses supported
+# Let's leave our seed data alone - note this limits the number of databases supported
 # https://github.com/bmabey/database_cleaner
 
 DatabaseCleaner.strategy = :transaction
@@ -31,6 +32,7 @@ RSpec.configure do |config|
   config.include Helpers
   config.include Warden::Test::Helpers
   config.include Devise::TestHelpers, type: :controller
+  config.include Capybara::DSL
 end
 
 Warden.test_mode!
