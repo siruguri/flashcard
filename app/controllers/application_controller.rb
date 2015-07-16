@@ -44,10 +44,11 @@ class ApplicationController < ActionController::Base
   end
 
   def go_back_or_root(message)
-    redirect_to root_url, :alert => message
+    redirect_to '/404.html', :alert => message
   end 
 
-  # Use URL options to set locale. I prefer it that way.
+  # Use URL options to set locale. I prefer it that way. Making this a class method because
+  # Devise-based tests will fail otherwise (See https://github.com/plataformatec/devise/issues/1408)
   def self.default_url_options(options={})
     { locale: I18n.locale }
   end

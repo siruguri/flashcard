@@ -30,8 +30,8 @@ production:
 # production:
 # adapter: postgresql
 # encoding: unicode
-# database: tollmaster_prod
-# username: tollmaster_user
-# password: chattycathybaby
+# database: my_prod_database
+# username: my_proddatabase_user
+# password: my_prod_user_password
 # pool: 5
 # timeout: 5000
