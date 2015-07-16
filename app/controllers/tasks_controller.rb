@@ -1,11 +1,13 @@
 class TasksController < ApplicationController
+  # controller for actions related to tasks
+
   before_action :set_task, only: [:show, :edit, :update, :destroy]
   load_and_authorize_resource
 
   def index
-    # @tasks automatically set to Product.accessible_by(current_ability)
+    # @tasks automatically set by Cancan gem.
     respond_to do |format|
-      format.html #index.html.erb
+      format.html # index.html.haml
       format.json { render json: @tasks }
     end
   end
@@ -17,7 +19,7 @@ class TasksController < ApplicationController
   end
 
   def edit
-    @task = Task.find(params[:id])
+    # TODO
   end
 
   def update
@@ -47,9 +49,10 @@ class TasksController < ApplicationController
 
     # If the task exists (in case this is an update), and it can be updated... 
     respond_to do |format|
-      db_transaction_result = yield
+      # The block should return Boolean
+      db_transaction_success? = yield
 
-      if db_transaction_result
+      if db_transaction_success?
         format.html { redirect_to @task, notice: "#{options[:success_message]}: task" }
         format.json { render json: @task, status: options[:success_http_status] }
       else

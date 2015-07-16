@@ -1,13 +1,14 @@
 source 'https://rubygems.org'
-ruby '2.1.5'
+ruby '2.2.0'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~>4.1'
-# Uncomment this for Heroku
-# gem 'rails_12factor'
+gem 'rails', '~>4.2'
 
 gem 'quiet_assets'
 gem 'thin'
+
+# Admin Interface
+gem 'rails_admin'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '=5.0.0.beta1'
@@ -26,9 +27,6 @@ gem 'jquery-rails'
 gem 'turbolinks'
 gem 'underscore-rails'
 
-# Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
-gem 'jbuilder'
-
 # Adding Doorkeeper
 gem 'doorkeeper'
 
@@ -37,37 +35,40 @@ group :doc do
   gem 'sdoc', require: false
 end
 
-gem 'gmaps4rails'
-
-gem 'geocoder'
-
 gem 'devise', git: 'https://github.com/plataformatec/devise.git', :branch => 'lm-rails-4-2'
 gem 'haml-rails'
 gem 'cancan'
 
-gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git'
 gem 'resque-web', require: 'resque_web'
 gem 'resque-scheduler'
 
 group :production do
   gem 'pg'
   gem 'activerecord-postgresql-adapter'
+  # Uncomment this for Heroku
+  # gem 'rails_12factor'
 end
 
 gem 'therubyracer'
 gem 'less-rails'
 
-gem 'formtastic'
-gem 'formtastic-bootstrap', github: 'siruguri/formtastic-bootstrap'
-
 group :development do
   # Rails 4.2 Web Console!
   gem 'web-console', '~> 2.0'
+
   # Use sqlite3 as the database for Active Record
   gem 'sqlite3'
+
+  gem 'capistrano',  '~> 3.1'
+  gem 'capistrano-rails', '~> 1.1'
+  # integrate bundler with capistrano
+  gem 'capistrano-bundler'
+  gem 'capistrano-rvm'
+  gem 'capistrano-passenger'
 end
 
-group :development do
+group :development, :test do
+  gem 'dotenv-rails'
   gem 'pry'
   gem 'pry-remote'
   gem 'pry-stack_explorer'
@@ -77,18 +78,11 @@ group :development do
   gem 'rspec-rails'
 end
 
-#testing with rspec
-
+#testing with minitest
 group :test do
-  gem 'shoulda-matchers'
-  gem 'capybara'
+  gem 'minitest-spec-rails'
+  gem 'minitest-rails-capybara'
   gem 'capybara-webkit'
-  gem "factory_girl_rails"
-  gem 'database_cleaner'
-  gem "email_spec"
-end
-
-group :development, :test do
-  gem 'dotenv-rails'
-  gem 'rspec-rails'
+  gem 'mocha'
+  gem 'simplecov', require: false
 end
