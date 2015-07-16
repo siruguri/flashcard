@@ -40,6 +40,20 @@ gem 'devise'
 gem 'haml-rails'
 gem 'cancan'
 
+gem 'resque'
+gem 'resque-scheduler'
+
+group :production do
+  gem 'pg'
+  gem 'activerecord-postgresql-adapter'
+end
+
+gem 'therubyracer'
+gem 'less-rails'
+
+gem 'formtastic'
+gem 'formtastic-bootstrap', github: 'mjbellantoni/formtastic-bootstrap'
+
 group :development do
   # Use sqlite3 as the database for Active Record
   gem 'sqlite3'
@@ -58,8 +72,8 @@ end
 group :test do
   gem 'rspec-rails'
   gem 'shoulda-matchers'
-
   gem 'capybara'
+  gem 'selenium-webdriver'
   gem "factory_girl_rails"
   gem 'database_cleaner'
   gem "email_spec"
