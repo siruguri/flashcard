@@ -39,4 +39,6 @@ TodoList::Application.configure do
 
   # Added per deprecation warning in 4.2
   config.active_support.test_order = :sorted
+
+  config.active_job.queue_adapter = :test
 end
