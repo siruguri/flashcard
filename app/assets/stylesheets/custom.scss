@@ -15,3 +15,17 @@ body {
   display: inline-block;
   margin: auto;
 }
+
+p {
+  margin-top: 5px;
+}
+
+.centered-textbox {
+  border: blue solid 1px;
+  border-radius: 5px;
+  display: inline-block;
+  padding: 5px;
+  height: 40px;
+  line-height: 25px;
+  vertical-align: middle;
+}

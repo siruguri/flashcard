@@ -40,8 +40,11 @@ gem 'devise'
 gem 'haml-rails'
 gem 'cancan'
 
-gem 'resque-web', require: 'resque_web'
-gem 'resque-scheduler'
+gem 'sidekiq'
+
+# Required for sidekiq monitoring
+gem 'sinatra', :require => nil
+gem 'sidekiq-cron'
 
 group :production do
   gem 'pg'

@@ -32,10 +32,14 @@ html, body {
   width: 100%;
 }
 
-ol {
-  list-style: decimal outside none; 
+ol, ul {
+  margin-top: 5px;
   margin-left: 10px; 
   padding-left: 1em;
+}
+
+ol {
+  list-style: decimal outside none; 
 }
 
 nav, menu {

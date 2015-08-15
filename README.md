@@ -82,8 +82,8 @@ The app also has some basic tests, and coverage is well below a reasonable level
 
 If you are going to use Sidekiq, here are some things worth knowing about how it works:
 
-* This app has the `sidekiq` gem, as well as `sinatra` for the monitoring web interface (`sidekiq-monitor`). Consequently, it has:
-  * a `Procfile` that lets you run all three tasks (your app server, Sidekiq's worker queue (there's one named `scrapers` in the Procfile that Sidekiq will look for,) and the Redis server by running `foreman`. Note that this assumes you have installed Redis on your system
+* This app has the `sidekiq` gem, as well as `sinatra` for the monitoring web interface (available at `/sidekiq_ui`). Consequently, it has:
+  * a `Procfile` that lets you run all three tasks (your app server, Sidekiq's worker queue (there's one named `scrapers` in the Procfile that Sidekiq will look for, and one named `mailers` which is the default queue used by `ActionMailer`'s jobs,) and the Redis server by running `foreman`. Note that this assumes you have installed Redis on your system
   * A route in your `routes.rb` file that lets you access the monitor.
 
 ## Heroku
