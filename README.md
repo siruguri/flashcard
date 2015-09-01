@@ -30,6 +30,10 @@ Before you run your app, you have to prepare the baseline code as follows:
   * Change the config information in `config\deploy.rb` - the app's deploy location (folder) and the user on the remote server whose account will be used for the deployment.
   * Change the deployment server hostname in `config\deploy\{staging, production}.rb`
   * Set up a shared folder in your deployment where you store your `config\database.yml` file
+  * As noted also below, if your production environment is Heroku, add this variable in Heroku:
+
+        heroku config:add RAILS_SECRET_TOKEN=a-128-character-token-no-spaces-though-you-generated-as-a-secret
+
   * Make sure the shared files linked to in `config\deploy.rb` are the ones you are using in your remote server, specifically the database files. If you are using Postgres on the remote server, you should remove the SQLite3 files from the linked files list.
 * The locale file has the site's title, and the phrase that's in the Bootstrap navbar - you might want to change it.
 * You might want to delete some models (`Task`, `Location`, etc.), their corresponding tests and migrations, and the corresponding routes. Also, you might want to get rid of the Google Maps API assets in `app\assets\javascripts\gmaps`. Remember to remove them from your repository, not just the filesystem. Here's a helpful list of `git rm` commands you might want to consider running:
@@ -49,6 +53,7 @@ Before you run your app, you have to prepare the baseline code as follows:
 	git rm fixtures/categories.yml fixtures/tasks.yml
 
 * You might also want to delete some of the steps in the `seeds.rb` file - otherwise if you ran a `db:reset` task, those methods will be executed and generate error messages if you don't have the corresponding models.
+* The app's asset pipeline does not load any new JS or CSS files by default via `require_tree`: if you add new asset files, make sure you have included them in the pipeline by adding them to `application.css` or `application.js`, as appropriate.
 
 ## Security
 
