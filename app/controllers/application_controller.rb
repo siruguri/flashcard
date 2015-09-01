@@ -12,11 +12,11 @@ class ApplicationController < ActionController::Base
 
   rescue_from ActionController::RoutingError do |exception|
     error_message = I18n.t(:message_404)
-    go_back_or_root(error_message)
+    go_to_root(error_message)
   end
   rescue_from CanCan::AccessDenied do |exception|
     error_message = I18n.t(:access_denied_message)
-    go_back_or_root(error_message)
+    go_to_root(error_message)
   end
 
   private
@@ -43,8 +43,8 @@ class ApplicationController < ActionController::Base
     @navbar_entries.compact!
   end
 
-  def go_back_or_root(message)
-    redirect_to '/404.html', :alert => message
+  def go_to_root(message)
+    redirect_to root_path, :alert => message
   end 
 
   # Use URL options to set locale. I prefer it that way. Making this a class method because
