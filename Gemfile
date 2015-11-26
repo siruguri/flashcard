@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 source 'https://rubygems.org'
 ruby '2.2.2'
 
@@ -10,7 +11,7 @@ gem 'quiet_assets'
 gem 'rails_admin'
 
 # Use SCSS for stylesheets
-gem 'sass-rails', '~>5.0'
+gem 'sass-rails'
 
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier'
@@ -29,7 +30,12 @@ gem 'turbolinks'
 gem 'underscore-rails'
 
 # Adding Doorkeeper
+gem 'grape'
+gem 'wine_bouncer'
 gem 'doorkeeper'
+
+# Integrations
+gem 'stripe'
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
@@ -83,11 +89,10 @@ gem 'dotenv'
 
 #testing with minitest
 group :test do
-  gem 'selenium-webdriver'
+  gem 'poltergeist'
   gem 'mocha'
   gem 'simplecov'
   gem 'webmock'
   gem 'minitest-spec-rails'
   gem 'minitest-rails-capybara'
-  gem 'capybara-webkit'
 end

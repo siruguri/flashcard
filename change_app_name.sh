@@ -8,9 +8,6 @@ sed "s/TodoList/$NEWNAME/g" config/environment.rb > _tmp; mv _tmp config/environ
 sed "s/TodoList/$NEWNAME/g" config/environments/development.rb > _tmp; mv _tmp config/environments/development.rb 
 sed "s/TodoList/$NEWNAME/g" config/environments/production.rb > _tmp; mv _tmp config/environments/production.rb 
 sed "s/TodoList/$NEWNAME/g" config/environments/test.rb > _tmp; mv _tmp config/environments/test.rb 
-sed "s/TodoList/$NEWNAME/g" config/initializers/secret_token.rb > _tmp; mv _tmp config/initializers/secret_token.rb 
-sed "s/TodoList/$NEWNAME/g" config/initializers/secret_token.rb > _tmp; mv _tmp config/initializers/secret_token.rb 
-sed "s/TodoList/$NEWNAME/g" config/initializers/secret_token.rb > _tmp; mv _tmp config/initializers/secret_token.rb 
 sed "s/TodoList/$NEWNAME/g" config/initializers/session_store.rb > _tmp; mv _tmp config/initializers/session_store.rb 
 sed "s/TodoList/$NEWNAME/g" config/routes.rb > _tmp; mv _tmp config/routes.rb 
 sed "s/TodoList/$NEWNAME/g" Rakefile > _tmp; mv _tmp Rakefile 
