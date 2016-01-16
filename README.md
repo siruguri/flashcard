@@ -39,18 +39,16 @@ Before you run your app, you have to prepare the baseline code as follows:
 * You might want to delete some models (`Task`, `Location`, etc.), their corresponding tests and migrations, and the corresponding routes. Also, you might want to get rid of the Google Maps API assets in `app\assets\javascripts\gmaps`. Remember to remove them from your repository, not just the filesystem. Here's a helpful list of `git rm` commands you might want to consider running:
 
         cd app/models/
-        git rm category.rb location.rb task*
+        git rm category.rb  task*
         cd ../../app/controllers
-        git rm locations_controller.rb tasks_controller.rb categories_controller.rb
-	git rm -r api
+        git rm app_tasks_controller.rb app_tasks_controller.rb navbar_entries_controller.rb  homepage_controller.rb users_controller.rb	categories_controller.rb
         cd ../app/views/
-        git rm -r locations/ tasks/ categories/
-	cd ../db/migrate
-	git rm *task* *categor* *doork*
+        git rm -r navbar_entries/ users/
+	cd ../../db/migrate
+	git rm *add_admin* *add_age* *create_navb*
         cd ../../test/
-	git rm controllers/*
 	git rm integrations/*
-	git rm fixtures/categories.yml fixtures/tasks.yml
+	git rm fixtures/navbar_entries.yml
 
 * You might also want to delete some of the steps in the `seeds.rb` file - otherwise if you ran a `db:reset` task, those methods will be executed and generate error messages if you don't have the corresponding models.
 * The app's asset pipeline does not load any new JS or CSS files by default via `require_tree`: if you add new asset files, make sure you have included them in the pipeline by adding them to `application.css` or `application.js`, as appropriate.
