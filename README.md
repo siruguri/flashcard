@@ -77,7 +77,7 @@ The app also has some basic tests, and coverage is well below a reasonable level
 
 * It uses Minitest.
 * It uses Capybara.
-* CI: None so far. This codebase has evolved very slowly from Ruby MRI 2.0 to 2.2.2, and from Rails 4.0 to 4.2. So possibly all combinations of those two version histories will work but YMMV.
+* CI: None so far. This codebase has evolved very slowly from Ruby MRI 2.0 to 2.3.0, and from Rails 4.0 to 4.2. So possibly all combinations of those two version histories will work but YMMV.
 * Unit tests for users and tasks - check that users can be created, and that tasks cannot be created when a user is not logged in.
 * Integration tests: None so far
 
