@@ -34,6 +34,10 @@ TodoList::Application.configure do
   # ActionMailer::Base.deliveries array.
   config.action_mailer.delivery_method = :test
 
+  # In case you use route helpers in your mailer views
+  config.action_mailer.default_url_options = { :host => 'testhost.com' }
+  config.action_mailer.default_options = { :from => 'testhost@testhost.com' }
+  
   # Print deprecation notices to the stderr.
   config.active_support.deprecation = :stderr
 

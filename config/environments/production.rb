@@ -77,4 +77,17 @@ TodoList::Application.configure do
 
   # Use default logging formatter so that PID and timestamp are not suppressed.
   config.log_formatter = ::Logger::Formatter.new
+
+  config.action_mailer.default_options = { from: Rails.application.secrets.default_mailer_from }
+  config.action_mailer.default_url_options = { :host => Rails.application.secrets.default_mailer_host }
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+      :address        => 'smtp.mandrillapp.com',
+      :port           => '587',
+      :authentication => :plain,
+      :user_name      => ENV['MANDRILL_SMTP_USERNAME'],
+      :password       => ENV['MANDRILL_SMTP_APIKEY'],
+      :domain         => 'gmail.com',
+      :enable_starttls_auto => true
+  }
 end

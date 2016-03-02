@@ -1,8 +1,7 @@
 def devise_sign_in(u, scope = :user)
-  @request.env["devise.mapping"] = Devise.mappings[scope]
-  sign_in u
+  login_as u, scope: scope
 end
 
 def devise_sign_out(u)
-  sign_out u
+  logout u
 end
