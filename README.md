@@ -41,10 +41,11 @@ Before you run your app, you have to prepare the baseline code as follows:
         cd app/models/
         git rm category.rb  task*
         cd ../../app/controllers
-        git rm app_tasks_controller.rb app_tasks_controller.rb navbar_entries_controller.rb  homepage_controller.rb users_controller.rb	categories_controller.rb
-        cd ../app/views/
+        git rm app_tasks_controller.rb app_tasks_controller.rb navbar_entries_controller.rb  homepage_controller.rb users_controller.rb
+        cd ../../app/views/
         git rm -r navbar_entries/ users/
 	cd ../../db/migrate
+	git rm *navbar*
 	git rm *add_admin* *add_age* *create_navb*
         cd ../../test/
 	git rm integrations/*
