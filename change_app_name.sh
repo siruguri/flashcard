@@ -11,6 +11,8 @@ sed "s/TodoList/$NEWNAME/g" config/environments/test.rb > _tmp; mv _tmp config/e
 sed "s/TodoList/$NEWNAME/g" config/initializers/session_store.rb > _tmp; mv _tmp config/initializers/session_store.rb 
 sed "s/TodoList/$NEWNAME/g" config/routes.rb > _tmp; mv _tmp config/routes.rb 
 sed "s/TodoList/$NEWNAME/g" Rakefile > _tmp; mv _tmp Rakefile 
+
 sed "s/_todo_list/_$NEWUNDERSCOREDNAME/g" config/initializers/session_store.rb > _tmp; mv _tmp config/initializers/session_store.rb
 
+sed "s/todo_list/$NEWUNDERSCOREDNAME/g" config/initializers/sidekiq.rb > _tmp; mv _tmp config/initializers/sidekiq.rb
 sed "s/todo_list/$NEWUNDERSCOREDNAME/g" config/deploy.rb > _tmp; mv _tmp config/deploy.rb

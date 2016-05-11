@@ -19,10 +19,10 @@ TodoList::Application.routes.draw do
 
   # authenticate :admin, lambda { |u| u.is_a? Admin } do
   mount Sidekiq::Web => '/sidekiq_ui'
-  # Adds RailsAdmin
-  mount RailsAdmin::Engine => '/rails_admin', as: 'rails_admin'
-
   #end
+
+  # Adds RailsAdmin, which is protected in the rails_admin initializer
+  mount RailsAdmin::Engine => '/rails_admin', as: 'rails_admin'
 
   # Need a catch all to redirect to the errors controller, for catching 404s as an exception
   match "*path", to: "errors#catch_404", via: [:get, :post]

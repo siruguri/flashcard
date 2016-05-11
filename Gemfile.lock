@@ -78,7 +78,9 @@ GEM
       rack (>= 1.0.0)
       rack-test (>= 0.5.4)
       xpath (~> 2.0)
-    cliver (0.3.2)
+    capybara-webkit (1.8.0)
+      capybara (>= 2.3.0, < 2.7.0)
+      json
     coderay (1.1.1)
     coercible (1.0.0)
       descendants_tracker (~> 0.0.1)
@@ -194,11 +196,6 @@ GEM
       mini_portile2 (~> 2.0.0.rc2)
     orm_adapter (0.5.0)
     pg (0.18.4)
-    poltergeist (1.9.0)
-      capybara (~> 2.1)
-      cliver (~> 0.3.1)
-      multi_json (~> 1.0)
-      websocket-driver (>= 0.2.0)
     pry (0.10.3)
       coderay (~> 1.1.0)
       method_source (~> 0.8.1)
@@ -353,9 +350,6 @@ GEM
       addressable (>= 2.3.6)
       crack (>= 0.3.2)
       hashdiff
-    websocket-driver (0.6.3)
-      websocket-extensions (>= 0.1.0)
-    websocket-extensions (0.1.2)
     wine_bouncer (0.5.1)
       doorkeeper (>= 1.4, < 4.0)
       grape (~> 0.10, < 1.0)
@@ -375,6 +369,7 @@ DEPENDENCIES
   capistrano-rails (~> 1.1)
   capistrano-rvm
   capistrano-sidekiq
+  capybara-webkit
   coffee-rails
   devise
   doorkeeper
@@ -388,7 +383,6 @@ DEPENDENCIES
   minitest-spec-rails
   mocha
   pg
-  poltergeist
   pry
   pry-byebug
   pry-remote

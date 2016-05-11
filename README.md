@@ -42,9 +42,16 @@ Before you run your app, you have to prepare the baseline code as follows:
         git rm category.rb  task*
         cd ../../app/controllers
         git rm app_tasks_controller.rb app_tasks_controller.rb navbar_entries_controller.rb  homepage_controller.rb users_controller.rb
+	cd ../../app/helpers
+	git rm task* expired* test*
         cd ../../app/views/
         git rm -r navbar_entries/ users/
-	cd ../../db/migrate
+	cd ../../app/assets/javascripts
+	git rm tasks.js.coffee test_models.js.coffee
+	git rm -rf gmaps
+	cd ../stylesheets
+	git rm test_models.css.scss tasks.css.scss task.css.scss
+	cd ../../../db/migrate
 	git rm *navbar*
 	git rm *add_admin* *add_age* *create_navb*
         cd ../../test/
@@ -71,6 +78,10 @@ The code attempts to be secure - it passes all Brakeman tests, as of Apr 2014. P
 ## Views
 
 The default application layout expects the `flash` hash to have two keys: `:alert` and `:notice`, that use Bootstrap built-in classnames for styling.
+
+### Styling
+
+You might want to note the classes in `assets/stylesheets/custom.scss` and that there is a `variables.scss` file too in that folder. There are some common use cases in the former, like floats, text aligned in the center, and so on, that are mapped to semantically clear selector class names.
 
 ## Testing
 

@@ -46,6 +46,7 @@ gem 'devise'
 gem 'haml-rails'
 gem 'cancan'
 
+gem 'redis-namespace'
 gem 'sidekiq'
 
 # Required for sidekiq monitoring
@@ -89,9 +90,9 @@ gem 'dotenv'
 
 #testing with minitest
 group :test do
-  gem 'poltergeist'
+  gem 'capybara-webkit'
   gem 'mocha'
-  gem 'simplecov'
+  gem 'simplecov', require: false
   gem 'webmock'
   gem 'minitest-spec-rails'
   gem 'minitest-rails-capybara'
