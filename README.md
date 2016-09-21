@@ -2,9 +2,10 @@
 
 ## Introduction
 
-This Rails 4.2 app sets up the basic code for a skeleton app:
+This Rails 4.2.7 app sets up the basic code for a skeleton app:
 
-* There some basic models, each meant to do somethign interesting:
+* The app uses the Thin application server, instead of the Webrick default.
+* There some basic models, each meant to do something interesting:
   * Task: It borrows code from a standard scaffold structure. It showcases a simple association - belongs_to :owner, class_name: "User"
   * Location: It showcases geocoding.
 * Devise and Cancan are set up:

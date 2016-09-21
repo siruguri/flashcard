@@ -4,6 +4,7 @@ ruby '2.3.1'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~>4.2'
+gem 'thin'
 
 gem 'quiet_assets'
 
