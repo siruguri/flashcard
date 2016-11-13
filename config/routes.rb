@@ -15,7 +15,6 @@ TodoList::Application.routes.draw do
 
   # Admin - these routes sould ideally be protected with a constraint
   require 'sidekiq/web'
-  require 'sidekiq/cron/web'
 
   # authenticate :admin, lambda { |u| u.is_a? Admin } do
   mount Sidekiq::Web => '/sidekiq_ui'

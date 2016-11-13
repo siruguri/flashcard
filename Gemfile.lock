@@ -98,6 +98,9 @@ GEM
       rack (>= 1.0.0)
       rack-test (>= 0.5.4)
       xpath (~> 2.0)
+    capybara-webkit (1.1.0)
+      capybara (~> 2.0, >= 2.0.2)
+      json
     cliver (0.3.2)
     coderay (1.1.1)
     coercible (1.0.0)
@@ -186,6 +189,20 @@ GEM
     mime-types-data (3.2016.0521)
     mini_portile2 (2.1.0)
     minitest (5.9.1)
+    minitest-capybara (0.8.2)
+      capybara (~> 2.2)
+      minitest (~> 5.0)
+      rake
+    minitest-metadata (0.6.0)
+      minitest (>= 4.7, < 6.0)
+    minitest-rails (3.0.0)
+      minitest (~> 5.8)
+      railties (~> 5.0)
+    minitest-rails-capybara (3.0.0)
+      capybara (~> 2.7)
+      minitest-capybara (~> 0.8)
+      minitest-metadata (~> 0.6)
+      minitest-rails (~> 3.0)
     minitest-spec-rails (5.4.0)
       minitest (~> 5.0)
       rails (>= 4.1)
@@ -371,6 +388,7 @@ DEPENDENCIES
   capistrano-rvm
   capistrano-sidekiq
   capybara
+  capybara-webkit
   coffee-rails
   devise
   doorkeeper
@@ -380,6 +398,7 @@ DEPENDENCIES
   haml-rails
   jquery-rails
   jquery-ui-rails
+  minitest-rails-capybara
   minitest-spec-rails
   mocha
   pg
