@@ -22,6 +22,7 @@ module TodoList
     # Run "rake -D time" for a list of tasks for finding time zone names. Default is UTC.
     # config.time_zone = 'Central Time (US & Canada)'
 
+    config.assets.quiet = true
     config.active_job.queue_adapter = :sidekiq
     config.middleware.insert(0, Rack::Deflater)
     config.autoload_paths += %W(#{config.root}/lib)

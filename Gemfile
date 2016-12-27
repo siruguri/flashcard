@@ -4,6 +4,7 @@ ruby '2.3.1'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '>=5.0'
+gem 'thin'
 
 # Admin Interface
 gem 'rack-pjax'
@@ -54,6 +55,7 @@ gem 'haml-rails'
 gem 'cancan'
 
 gem 'sidekiq'
+gem 'redis-namespace'
 
 # Required for sidekiq monitoring
 gem 'sinatra', git: 'https://github.com/sinatra/sinatra.git'
@@ -72,6 +74,7 @@ end
 group :development, :test do
   # Use sqlite3 as the database for Active Record in dev and test envs  
   gem 'sqlite3'
+  gem 'rails-controller-testing'
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
   # Access an IRB console on exception pages or by using <%= console %> in views

@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This Rails 4.2.7 app sets up the basic code for a skeleton app:
+This Rails 5.0.0.1 app sets up the basic code for a skeleton app:
 
 * The app uses the Thin application server, instead of the Webrick default.
 * There some basic models, each meant to do something interesting:
