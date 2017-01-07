@@ -15,9 +15,6 @@ gem 'rack-pjax'
 gem 'remotipart'
 gem 'rails_admin'
 
-#gem 'remotipart', github: 'melvinsembrano/remotipart'
-#gem 'rails_admin', github: 'sferik/rails_admin', branch: 'rails-5'
-
 # Use SCSS for stylesheets
 gem 'sass-rails'
 
@@ -44,14 +41,8 @@ gem 'doorkeeper'
 
 # Integrations
 gem 'stripe'
-
-group :doc do
-  # bundle exec rake doc:rails generates the API under doc/api.
-  gem 'sdoc', require: false
-end
-
 gem 'devise'
-gem 'haml-rails'
+gem 'haml'
 gem 'cancan'
 
 gem 'sidekiq'
