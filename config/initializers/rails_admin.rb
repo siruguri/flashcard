@@ -50,6 +50,16 @@ RailsAdmin.config do |config|
         label 'Task Titled As'
       end
     end
+
+=begin
+    This is how you'd do an edit with type specifications
+    edit do
+      field :task_name, :text do
+        label 'Task Titled As'
+      end
+    end
+=end
+    
   end
 
   def task_name
