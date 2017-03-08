@@ -1,4 +1,6 @@
-redis_options_hash = { url: 'redis://localhost:6379/0', namespace: "todo_list" }
+redis_options_hash = { url: (Rails.env.production? ?
+                               ENV['REDIS_URL'] : 'redis://localhost:6379/0'),
+                       namespace: "todo_list" }
 
 Sidekiq.configure_server do |config|
   config.redis = redis_options_hash

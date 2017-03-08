@@ -41,6 +41,10 @@ Before you run your app, you have to prepare the baseline code as follows:
 
         cd app/models/
         git rm category.rb  task*
+	cd ../../db/migrate
+	# Remove some columns that have been stuffed into the User table/model
+        git rm *age*user*
+	git rm *admin*user*
         cd ../../app/controllers
         git rm app_tasks_controller.rb app_tasks_controller.rb navbar_entries_controller.rb  homepage_controller.rb users_controller.rb
 	cd ../../app/helpers
@@ -54,9 +58,10 @@ Before you run your app, you have to prepare the baseline code as follows:
 	git rm test_models.css.scss tasks.css.scss task.css.scss
 	cd ../../../db/migrate
 	git rm *navbar*
-	git rm *add_admin* *add_age* *create_navb*
+	git rm *add_admin* *add_age*
         cd ../../test/
 	git rm integrations/*
+	git rm models/task*
 	git rm fixtures/navbar_entries.yml
 
 * You might also want to delete some of the steps in the `seeds.rb` file - otherwise if you ran a `db:reset` task, those methods will be executed and generate error messages if you don't have the corresponding models.

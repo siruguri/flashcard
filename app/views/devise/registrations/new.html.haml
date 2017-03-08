@@ -1,0 +1,26 @@
+.row
+  .col-xs-6.col-xs-offset-3
+    .h2.text-center
+      #{resource_name.capitalize} Sign Up
+.row.signin-form
+  .col-xs-6.col-xs-offset-3.sign-in-form
+    = form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f|
+      - if flash[:error]
+        = show_error_box!
+      %div
+        = f.label :email
+        %br
+        = f.email_field :email, class: 'form-control'
+
+      %div
+        = f.label :password
+        %br
+        = f.password_field :password, class: 'form-control'
+
+      %div
+        = f.label :password_confirmation
+        %br
+        = f.password_field :password_confirmation, class: 'form-control'
+
+      %div
+        = f.submit "Create Account", class: 'btn btn-primary'

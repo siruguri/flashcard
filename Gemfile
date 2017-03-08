@@ -29,8 +29,7 @@ gem 'jquery-rails'
 gem 'jquery-ui-rails'
 gem 'bootstrap-sass'
 
-# Needed for default layouts
-# Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
+# Both needed for default layouts and Turbolinks
 gem 'turbolinks'
 gem 'underscore-rails'
 
@@ -97,4 +96,6 @@ group :test do
   gem 'minitest-rails-capybara'
   gem 'capybara'
   gem 'capybara-webkit'
+  # You'll need this if you create records in a Capybara test: http://www.virtuouscode.com/2012/08/31/configuring-database_cleaner-with-rails-rspec-capybara-and-selenium/
+  # gem 'database_cleaner'  
 end
