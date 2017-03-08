@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 source 'https://rubygems.org'
-ruby '2.3.1'
+ruby '2.4.0'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '>=5.0'
@@ -45,6 +45,7 @@ gem 'haml'
 gem 'cancan'
 
 gem 'sidekiq'
+gem 'sidekiq-cron'
 gem 'redis-namespace'
 
 # Required for sidekiq monitoring
