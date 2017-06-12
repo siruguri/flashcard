@@ -33,7 +33,7 @@ Before you run your app, you have to prepare the baseline code as follows:
   * Set up a shared folder in your deployment where you store your `config\database.yml` file
   * As noted also below, if your production environment is Heroku, add this variable in Heroku:
 
-        heroku config:add RAILS_SECRET_TOKEN=a-128-character-token-no-spaces-though-you-generated-as-a-secret
+        heroku config:add SESSION_TOKEN=a-128-character-token-no-spaces-though-you-generated-as-a-secret
 
   * Make sure the shared files linked to in `config\deploy.rb` are the ones you are using in your remote server, specifically the database files. If you are using Postgres on the remote server, you should remove the SQLite3 files from the linked files list.
 * The locale file has the site's title, and the phrase that's in the Bootstrap navbar - you might want to change it.
@@ -72,10 +72,10 @@ Before you run your app, you have to prepare the baseline code as follows:
 The code attempts to be secure - it passes all Brakeman tests, as of Apr 2014. Particularly, it:
 
 * moves `config/database.yml` to `config\database.yml.sample` in the repo and ignores the former, so that you are forced to set credentials in a non-committed file, and
-* avoids using the stored session secret in production - in production, you have to store the secret token in the environment variable **RAILS_SECRET_TOKEN**.
+* avoids using the stored session secret in production - in production, you have to store the secret token in the environment variable **SESSION_TOKEN**.
   * If your production environment is Heroku, add this variable in Heroku like this:
 
-        heroku config:add RAILS_SECRET_TOKEN=a-128-character-token-no-spaces-though-you-generated-as-a-secret
+        heroku config:add SESSION_TOKEN=a-128-character-token-no-spaces-though-you-generated-as-a-secret
 	
   * In development, the secret token is enabled in `config/initializers/secret_token.rb`. The app also uses the `dotenv` gem to utilize a .env file in the app root as an alternate method if you don't even want to share your development secret token in your repo. You have to create the `.env` file and add the `RAILS_SECRET_TOKEN` variable to it, if you are using this method.
 * **However**, the app does **NOT** use the database as the session store. This is the recommended thing to do, but has some performance implications, so [look into implementing it yourself](https://github.com/rails/activerecord-session_store).
