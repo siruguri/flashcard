@@ -14,10 +14,6 @@ class ApplicationController < ActionController::Base
     error_message = I18n.t(:message_404)
     go_to_root(error_message)
   end
-  rescue_from CanCan::AccessDenied do |exception|
-    error_message = I18n.t(:access_denied_message)
-    go_to_root(error_message)
-  end
 
   private
   def set_locale
