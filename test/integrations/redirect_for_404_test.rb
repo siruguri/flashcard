@@ -9,6 +9,6 @@ class RedirectFor404Test < Capybara::Rails::TestCase
 
   test '404 redirects to sign in page' do
     visit '/not_a_route_at_all'
-    assert_equal root_path, current_path
+    assert_equal '/users/sign_in', current_path
   end
 end

@@ -8,6 +8,12 @@ FlashCard::Application.routes.draw do
   resources :users, path: 'profiles'
 
   root to: 'homepage#show' # Change this to something else in your app.
+
+  resources :responses, only: [:update, :show] do
+    collection do
+      get :latest
+    end
+  end
   
   # The rest of the routes file is specific to this app and you will have to manipulate it for your app. The 
   # 404 catchall route below always has to be at the end, if you intend to use it as designed in this app.

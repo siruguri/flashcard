@@ -15,3 +15,4 @@
 //= require bootstrap-sprockets
 //= require turbolinks
 //= require underscore
+//= require load_dictionary_entry

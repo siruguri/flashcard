@@ -1,0 +1,4 @@
+d_1:
+  word_key: cat
+  word_translations: <%= {en: 'cat', es: 'gato'}.to_json %>
+  

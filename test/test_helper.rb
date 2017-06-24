@@ -12,6 +12,9 @@ require 'capybara/webkit'
 Dir[Rails.root.join('test/support/**/*.rb')].each { |f| require f }
 WebMock.disable_net_connect!(:allow_localhost => true)
 Capybara.javascript_driver = :webkit
+Capybara::Webkit.configure do |config|
+  config.allow_url("https://fonts.googleapis.com/css?family=Cabin")
+end
 
 class ActiveSupport::TestCase
   # Setup all fixtures in test/fixtures/*.yml for all tests in alphabetical order.
