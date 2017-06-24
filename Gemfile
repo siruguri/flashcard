@@ -3,7 +3,7 @@ source 'https://rubygems.org'
 ruby '2.4.0'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '>=5.0'
+gem 'rails', '>=5.1'
 gem 'thin'
 
 # Admin Interface
@@ -33,16 +33,8 @@ gem 'bootstrap-sass'
 gem 'turbolinks'
 gem 'underscore-rails'
 
-# Adding Doorkeeper
-gem 'grape'
-gem 'wine_bouncer'
-gem 'doorkeeper'
-
-# Integrations
-gem 'stripe'
 gem 'devise'
 gem 'haml'
-gem 'cancan'
 
 gem 'sidekiq'
 gem 'sidekiq-cron'
